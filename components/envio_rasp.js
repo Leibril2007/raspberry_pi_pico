@@ -1,21 +1,21 @@
-async function enviar(btn1, btn2, btn3) {
+async function enviar(modoEnv, colorEnv) {
     
     try {
         
-        const response = await fetch('https://semaforo-cd648-default-rtdb.firebaseio.com/',{
-            method: 'POST',
+        const response = await fetch('https://semaforo-cd648-default-rtdb.firebaseio.com/estado.json',{
+            method: 'PATCH',
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                boton1: btn1,
-                boton2: btn2,
-                boton3: btn3
+                modo: modoEnv,
+                color: colorEnv,
             })
         }
     );
 
     const data = await response.json();
+    console.log("DATOS ENVIADOS :D");
     return data;
 
     } catch (error) {
@@ -23,3 +23,5 @@ async function enviar(btn1, btn2, btn3) {
     }
 
 }
+
+export { enviar };
