@@ -43,3 +43,5 @@ async function actualizarLuces() {
 setInterval(actualizarLuces, 200)
 
 actualizarLuces();
+
+export { actualizarLuces };
