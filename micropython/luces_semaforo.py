@@ -13,8 +13,7 @@ def luz_roja(pin, tiempo):
     print("corriendo")  # Muestra mensaje en consola
     time.sleep(tiempo)     # Espera 0.5 segundos
     led1.value(0)       # Apaga el LED
-    time.sleep(tiempo)
-    
+    time.sleep(tiempo)     
 
 def luz_amarillo(pin, tiempo):
     led2 = Pin(pin, Pin.OUT)
@@ -42,3 +41,28 @@ def luz_verde(pin, tiempo):
     led3.value(0)       # Apaga el LED
     time.sleep(tiempo)
     
+def lz_roja(pin):
+    
+    led1 = Pin(pin, Pin.OUT)
+    dato = 1
+    dato2 = 0
+    dato3 = 0
+    enviar_datos_fb(dato, dato2, dato3)
+    
+    led1.value(1)
+    
+    
+def lz_verde(pin):
+    led1 = Pin(pin, Pin.OUT)
+    dato = 0
+    dato2 = 0
+    dato3 = 3
+    enviar_datos_fb(dato, dato2, dato3)
+    
+    led1.value(1)
+
+
+def apagar(led1, led2):
+    Pin(led1, Pin.OUT).value(0)
+    Pin(led2, Pin.OUT).value(0)
+

@@ -16,11 +16,17 @@ def conectar_wifi(lista_redes):
         
         timeout = 0
         while not wlan.isconnected() and timeout < 10:
+            
+            mostrar_buscar_con_rasp = Pin("LED", Pin.OUT)
+            mostrar_buscar_con_rasp.value(1)
+            
             print(".", end = "")
             time.sleep(1)
             timeout += 1
         
         if wlan.isconnected():
+            mostrar_buscar_con_rasp.value(0)
+            
             print("\n✅ Conectado a:", red['ssid'])
             return True
         else:
@@ -28,6 +34,6 @@ def conectar_wifi(lista_redes):
     
     
 tiempo_rojo = 0.5
-tiempo_amarillo = 0.6
+tiempo_amarillo = 0
 tiempo_verde = 0.7
         
