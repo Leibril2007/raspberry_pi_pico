@@ -19,7 +19,7 @@ if conectar_wifi(REDES):
     print("Conectado a Wifi - Ejecutando programa principal")
     
     dht11.programa_dht11()
-    encender_semaforo.cargar_semaforo()   
+    #encender_semaforo.cargar_semaforo()   
     
 else:
     print("Modo offline - Funcionalidades limitadas")

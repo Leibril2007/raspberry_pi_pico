@@ -1,6 +1,7 @@
 import luces_semaforo
 import config_red
 import enviar_datos
+import recibir_modo_led
 
 def cargar_semaforo():
     
@@ -11,6 +12,7 @@ def cargar_semaforo():
     a = 0
     while True:
         datos = enviar_datos.recibir_datos_fb()
+        
         
         
         if datos.get("modo") == "manual" and datos.get("color") == "rojo":
