@@ -1,4 +1,5 @@
 import { recibir_datos_th } from "./recibir_datos_dht11.js";
+import { enviar } from "../envio_rasp.js";
 
 function cargarTempHum(hum, temp){
 
@@ -35,6 +36,16 @@ function cargarTempHum(hum, temp){
     if (temp >= 30){
         imgVent.src = "https://mir-s3-cdn-cf.behance.net/project_modules/source/bafb3929035897.55decb26f207b.gif";
         div.appendChild(imgVent);
+
+        let mdRojo = "manual";
+        let envColorR = "rojo";
+
+        enviar(mdRojo, envColorR);
+    } else {
+        let mdRojo = "null"
+        let envColorR = "null"
+
+        enviar(mdRojo, envColorR);
     }
 
     document.body.appendChild(div);

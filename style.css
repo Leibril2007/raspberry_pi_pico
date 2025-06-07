@@ -10,6 +10,7 @@ body {
   
   .semaforo {
     width: 5rem;
+    height: 18rem;
     justify-self: center;
     background: #333;
     padding: 20px;

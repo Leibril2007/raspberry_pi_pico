@@ -35,13 +35,13 @@
 }
 
 img {
-    width: 50px;
+    width: 200px;
     height: auto;
     margin-top: 10px;
 } 
 
 
 img[src="https://mir-s3-cdn-cf.behance.net/project_modules/source/bafb3929035897.55decb26f207b.gif"] {
-    width: 80px;
+    width: 250px;
 } 
 
