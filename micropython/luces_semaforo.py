@@ -41,7 +41,9 @@ def luz_verde(pin, tiempo):
     led3.value(0)       # Apaga el LED
     time.sleep(tiempo)
     
-def lz_roja(pin):
+    
+    
+def luz_roja_estatico(pin):
     
     led1 = Pin(pin, Pin.OUT)
     dato = 1
@@ -50,9 +52,14 @@ def lz_roja(pin):
     enviar_datos_fb(dato, dato2, dato3)
     
     led1.value(1)
+def luz_amar_estatico(pin):
+    led1 = Pin(pin, Pin.OUT)
+    dato = 0
+    dato2 = 2
+    dato3 = 0
+    enviar_datos_fb(dato, dato2, dato3)
     
-    
-def lz_verde(pin):
+def luz_verde_estatico(pin):
     led1 = Pin(pin, Pin.OUT)
     dato = 0
     dato2 = 0
@@ -62,7 +69,12 @@ def lz_verde(pin):
     led1.value(1)
 
 
+
+
 def apagar(led1, led2):
     Pin(led1, Pin.OUT).value(0)
     Pin(led2, Pin.OUT).value(0)
 
+def apagarDHT(led):
+    Pin(led, Pin.OUT).value(0)
+    

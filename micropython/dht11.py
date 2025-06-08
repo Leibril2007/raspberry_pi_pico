@@ -5,6 +5,8 @@ import ujson
 import time
 import luces_semaforo
 import enviar_datos
+import encender_semaforo
+from encender_semaforo import ledRojo
 
 def enviar_datos_tempHum(temp, hum):
     try:
@@ -41,18 +43,12 @@ def programa_dht11():
             
             datos = enviar_datos.recibir_datos_fb()
             
+            modo = datos.get("modo")
+            color = datos.get("color")
             
-            ledRojo = 15
-        
-            if datos.get("modo") == "manual" and datos.get("color") == "rojo":
+            encender_semaforo.verificar_luz_roja(modo, color)
             
-                print("DETENER ROJO")
-                luces_semaforo.lz_roja(ledRojo)
             
-                print("SE ENVIO ROJO")
-            else:
-                luces_semaforo.apagarDHT(ledRojo)
-                   
             print("Temperatura: {}°C".format(temp)) # format coloca el dato de la temperatura entre las llaves, similar a fprint
             print("Humedad: {}%".format(hum))
 

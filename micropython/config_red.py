@@ -33,7 +33,7 @@ def conectar_wifi(lista_redes):
             print(f"\n❌ No se pudo conectar a: {red['ssid']}")
     
     
-tiempo_rojo = 0.5
-tiempo_amarillo = 0
-tiempo_verde = 0.7
+tiempo_led = 0.5
+
+
         
