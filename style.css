@@ -9,7 +9,8 @@ body {
   }
   
   .semaforo {
-    width: 5rem;
+    max-width: 6.5rem;
+    width: 100%;
     height: 18rem;
     justify-self: center;
     background: #333;
@@ -17,12 +18,14 @@ body {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
   }
   
   .luz {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background: #555;
     box-shadow: 0 0 10px #000;
